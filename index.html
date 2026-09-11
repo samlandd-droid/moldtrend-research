@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MoldTrend Research · DIY 硅胶模具趋势研究（用途说明）</title>
+    <meta
+      name="description"
+      content="MoldTrend Research 是一个内部市场研究工具，用于研究美国市场 DIY 硅胶/树脂模具的设计元素与产品形态趋势。本页仅说明用途，不提供源码、数据库或任何采集数据。"
+    />
+    <meta name="robots" content="index,follow" />
+    <meta name="color-scheme" content="light dark" />
+    <style>
+      :root {
+        --bg: #f7f7f5;
+        --card: #ffffff;
+        --ink: #1c1c1a;
+        --muted: #5c5c57;
+        --line: #e3e3de;
+        --accent: #2f6f4f;
+        --accent-soft: #eaf3ee;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #14161a;
+          --card: #1c1f24;
+          --ink: #ececeb;
+          --muted: #a3a7ab;
+          --line: #2b3037;
+          --accent: #7fd0a4;
+          --accent-soft: #1f2a24;
+        }
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC",
+          "PingFang SC", "Microsoft YaHei", sans-serif;
+        padding: 0 20px 72px;
+      }
+      main { max-width: 820px; margin: 0 auto; }
+      header { padding: 56px 0 8px; }
+      .badge {
+        display: inline-block;
+        font-size: 12px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--accent);
+        background: var(--accent-soft);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 4px 12px;
+      }
+      h1 { font-size: 30px; line-height: 1.35; margin: 16px 0 8px; letter-spacing: -0.01em; }
+      .lede { color: var(--muted); font-size: 17px; margin: 0; }
+      section {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 22px 24px;
+        margin: 20px 0;
+      }
+      h2 { font-size: 18px; margin: 0 0 10px; }
+      h3 { font-size: 15px; margin: 18px 0 6px; color: var(--muted); }
+      ul { padding-left: 20px; margin: 8px 0; }
+      li { margin: 6px 0; }
+      .two { display: grid; gap: 0 28px; grid-template-columns: 1fr; }
+      @media (min-width: 720px) { .two { grid-template-columns: 1fr 1fr; } }
+      .yes li::marker { color: var(--accent); }
+      .no li::marker { color: #b4543f; }
+      code {
+        background: var(--accent-soft);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 1px 6px;
+        font-size: 13px;
+      }
+      .en { font-size: 14px; color: var(--muted); }
+      .en h2 { font-size: 16px; color: var(--ink); }
+      footer {
+        color: var(--muted);
+        font-size: 13px;
+        text-align: center;
+        margin-top: 32px;
+        line-height: 1.9;
+      }
+      hr { border: 0; border-top: 1px solid var(--line); margin: 20px 0; }
+      a { color: var(--accent); }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <span class="badge">用途说明 · Purpose Statement</span>
+        <h1>MoldTrend Research<br />DIY 硅胶模具趋势研究工具</h1>
+        <p class="lede">
+          一个用于<strong>内部市场研究</strong>的数据分析工具：研究美国市场 DIY 硅胶模具 / 树脂模具的
+          <strong>设计元素</strong>（造型母题）与 <strong>产品形态</strong>（蜡烛、托盘、吊坠、收纳盒等）
+          正在发生的趋势变化。
+        </p>
+      </header>
+
+      <section>
+        <h2>这个工具做什么</h2>
+        <ul class="yes">
+          <li>
+            把「公开的市场关注度信号」（例如关键词搜索热度，只代表关注度，
+            <strong>不代表销量</strong>）与「通过平台官方 API 授权获取的公开商品元数据」放在一起分析。
+          </li>
+          <li>
+            建立一套<strong>可追溯的标签体系</strong>：把商品拆解为元素（如海龟、蝴蝶结、蘑菇）与形态
+            （如带盖收纳盒、吊坠、托盘），再观察哪些组合在持续出现。
+          </li>
+          <li>
+            对每条结论标注<strong>来源等级</strong>与<strong>证据强度</strong>；证据不足时明确写
+            「暂无可靠数据」，而不是给出一个看起来精确的数字。
+          </li>
+          <li>输出面向研究者阅读的趋势报告与证据页面，用于内部判断设计方向。</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>这个工具不做什么</h2>
+        <div class="two">
+          <ul class="no">
+            <li>不销售、不代购、不铺货，不做任何交易行为；</li>
+            <li>不展示或转售平台商品内容，也不镜像平台界面；</li>
+            <li>不收集、不存储买家或卖家的个人信息；</li>
+            <li>不抓取需要登录才能访问的内容；</li>
+          </ul>
+          <ul class="no">
+            <li>不绕过验证码、访问限制或频率限制，不做反爬对抗；</li>
+            <li>不使用非公开接口，不冒充官方客户端；</li>
+            <li>不接入 Amazon 公开页面数据；</li>
+            <li>不对外提供数据下载、数据接口或数据转售。</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>数据与合规原则</h2>
+        <ul>
+          <li>
+            <strong>来源必须可标注</strong>：每条数据都带来源等级（平台官方 API / 公开信号 /
+            派生指标 / 示例数据），非官方来源<strong>永远不会</strong>被标成官方数据。
+          </li>
+          <li>
+            <strong>口径不越界</strong>：搜索热度是相对关注度、排名是排名、公开计数不是销量；
+            不做任何换算或臆测。
+          </li>
+          <li>
+            <strong>存储最小化</strong>：遵守平台条款的保留要求。就 Etsy 而言，商品内容
+            （标题、图片、价格等）最长保留 24 小时、对外展示新鲜度不超过 6 小时；
+            仅长期保留我们自行计算的派生标签与聚合统计。
+          </li>
+          <li><strong>不用示例数据填补真实缺口</strong>：数据不足就如实写不足。</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>使用范围与关于本页</h2>
+        <ul>
+          <li>本工具仅供<strong>内部研究</strong>使用，不提供服务、不对外开放。</li>
+          <li>
+            本页<strong>只说明用途</strong>：不提供源码，不提供数据库，不提供任何采集数据，
+            也不包含任何访问凭据。
+          </li>
+          <li>本页是纯静态页面：无 JavaScript、无 Cookie、无第三方资源、无访问统计。</li>
+          <li>如需核实用途，请通过本页所属的 GitHub 账号联系。</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>商标与免责声明（Etsy）</h2>
+        <p>
+          <strong>Etsy 是 Etsy, Inc. 的注册商标。</strong>
+          本项目是一个<strong>独立的研究工具</strong>，与 Etsy, Inc.
+          <strong>没有任何隶属、合作、赞助或背书关系</strong>。
+          如使用 Etsy 数据，一律通过<strong>官方 Etsy Open API v3</strong> 获取，
+          并遵守其 API 使用条款；本页不展示、不复制、不再分发任何 Etsy 内容。
+        </p>
+        <p class="en">
+          <strong>Etsy is a registered trademark of Etsy, Inc.</strong>
+          This project is an independent research tool. It is <strong>not affiliated with,
+          endorsed by, or sponsored by Etsy, Inc.</strong>
+          Where Etsy data is used, it is accessed through the official
+          <strong>Etsy Open API v3</strong> and handled in accordance with the Etsy API Terms of Use.
+          No Etsy content is displayed, copied, or redistributed on this page.
+        </p>
+        <hr />
+        <p class="en">
+          其他平台名称与商标归各自所有者所有；本项目与这些公司均无隶属、合作或背书关系，
+          也不代表其立场。本页内容仅为项目用途说明，不构成任何形式的要约、承诺或商业推广。
+        </p>
+      </section>
+
+      <section class="en">
+        <h2>English summary</h2>
+        <p>
+          <strong>MoldTrend Research</strong> is an internal market-research tool that studies which
+          design elements and product forms are trending for DIY silicone and resin molds in the US
+          market. It combines publicly available interest signals (search interest — an interest
+          metric, <em>not</em> sales) with public listing metadata obtained through official
+          platform APIs.
+        </p>
+        <p>
+          Every data point carries a source level and an evidence strength; when evidence is
+          insufficient the tool reports “no reliable data” rather than an invented number. It does
+          not sell products, does not resell or mirror platform content, does not collect personal
+          data, does not access login-gated content, and does not bypass captchas, access controls
+          or rate limits. It does not use Amazon public-page data.
+        </p>
+        <p>
+          This page is a purpose statement only. It contains <strong>no source code, no database,
+          no collected data and no credentials</strong>, and loads no third-party resources.
+        </p>
+      </section>
+
+      <footer>
+        MoldTrend Research · 用途说明页 · 最近更新：2026-09-11<br />
+        Etsy is a registered trademark of Etsy, Inc. · Not affiliated with, endorsed by,
+        or sponsored by Etsy, Inc.
+      </footer>
+    </main>
+  </body>
+</html>
